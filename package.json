@@ -1,7 +1,7 @@
 {
-  "name": "superinvoice",
+  "name": "paket-concierge-invoice-automation",
   "version": "1.0.0",
-  "description": "Just a try",
+  "description": "invoice automation using handlebars, puppeteer and nodemailer",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,10 +10,11 @@
     "pdf",
     "gen"
   ],
-  "author": "sam",
+  "author": "born3am",
   "license": "ISC",
   "dependencies": {
     "handlebars": "^4.7.6",
     "puppeteer": "^5.5.0"
-  }
+  },
+  "devDependencies": {}
 }
