@@ -61,49 +61,54 @@ invoicesDB.forEach((data) => {
       });
     }
 
+    async function sendEmail() {
+      // NODEMAILER
+      // Create a SMTP transporter object
+      let transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+          user: process.env.EMAIL,
+          pass: process.env.PASSWORD,
+        },
+      });
+
+      //NODEMAILER
+      //Setup email content
+      let mailOptions = {
+        from: process.env.EMAIL,
+        to: data.clientEmail,
+        subject: `Invoice number ${data.invoiceNumber}`,
+        text: `Hello ${data.clientName}!`,
+        html: `We are sending your invoice number ${data.invoiceNumber}. <br>
+       The invoice of ${data.invoiceAmount} is attached.`,
+        attachments: [
+          {
+            // file on disk as an attachment
+            filename: `invoice-${data.invoiceNumber}-${data.clientName}.pdf`,
+            path: `./invoices/invoice-${data.invoiceNumber}-${data.clientName}.pdf`,
+          },
+        ],
+      };
+
+      //NODEMAILER
+      // Send email
+      transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log(
+            `Email sent to ${data.clientName} at ${data.clientEmail} with info: ${info.response}`
+          );
+          data.invoiceSent = true;
+          fs.writeFileSync("./db/invoicesDB.json", JSON.stringify(invoicesDB));
+          data.invoicePdf = true;
+          fs.writeFileSync("./db/invoicesDB.json", JSON.stringify(invoicesDB));
+        }
+      });
+    }
+
     // Invoke the function and handle DB update
     generatePdf();
-
-    // NODEMAILER
-    // Create a SMTP transporter object
-    let transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.EMAIL,
-        pass: process.env.PASSWORD,
-      },
-    });
-
-    //NODEMAILER
-    //Setup email content
-    let mailOptions = {
-      from: process.env.EMAIL,
-      to: process.env.EMAIL,
-      subject: `Invoice number ${data.invoiceNumber}`,
-      text: `Hello ${data.clientName}!`,
-      html: `We are sending your invoice number ${data.invoiceNumber}. <br>
-       The invoice of ${data.invoiceAmount} is attached.`,
-      attachments: [
-        {
-          // file on disk as an attachment
-          filename: `invoice-${data.invoiceNumber}-${data.clientName}.pdf`,
-          path: `./invoices/invoice-${data.invoiceNumber}-${data.clientName}.pdf`,
-        },
-      ],
-    };
-
-    //NODEMAILER
-    // Send email
-    transporter.sendMail(mailOptions, function (error, info) {
-      if (error) {
-        console.log(error);
-      } else {
-        console.log("Email sent: " + info.response);
-        data.invoiceSent = true;
-        fs.writeFileSync("./db/invoicesDB.json", JSON.stringify(invoicesDB));
-        data.invoicePdf = true;
-        fs.writeFileSync("./db/invoicesDB.json", JSON.stringify(invoicesDB));
-      }
-    });
+    sendEmail();
   }
 });
