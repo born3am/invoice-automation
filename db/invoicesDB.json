@@ -2,37 +2,37 @@
     {
         "invoiceNumber": "INV-0001",
         "invoiceDate": "01.03.2022",
-        "invoiceAmount": "100.00",
+        "invoiceAmount": "€100,00",
         "invoiceStatus": "Paid",
         "invoiceDueDate": "01.04.2022",
         "clientName": "DHL",
         "clientStreet": "DHL Street",
         "clientCity": "DHL City",
-        "invoicePdf": false,
-        "invoiceSent": false
+        "invoicePdf": true,
+        "invoiceSent": true
     },
     {
         "invoiceNumber": "INV-0002",
         "invoiceDate": "10.03.2022",
-        "invoiceAmount": "200.00",
+        "invoiceAmount": "€200,00",
         "invoiceStatus": "Unpaid",
         "invoiceDueDate": "10.04.2022",
         "clientName": "FedEx",
         "clientStreet": "FedEx Street",
         "clientCity": "FedEx City",
         "invoicePdf": true,
-        "invoiceSent": false
+        "invoiceSent": true
     },
     {
         "invoiceNumber": "INV-0003",
         "invoiceDate": "20.03.2022",
-        "invoiceAmount": "300.00",
+        "invoiceAmount": "€300,00",
         "invoiceStatus": "Unpaid",
         "invoiceDueDate": "20.04.2022",
         "clientName": "UPS",
         "clientStreet": "UPS Street",
         "clientCity": "UPS City",
-        "invoicePdf": false,
-        "invoiceSent": false
+        "invoicePdf": true,
+        "invoiceSent": true
     }
 ]

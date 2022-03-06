@@ -1,5 +1,5 @@
 {
-  "name": "paket-concierge-invoice-automation",
+  "name": "invoice-automation",
   "version": "1.0.0",
   "description": "invoice automation using handlebars, puppeteer and nodemailer",
   "main": "index.js",
@@ -13,8 +13,9 @@
   "author": "born3am",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "handlebars": "^4.7.6",
+    "nodemailer": "^6.7.2",
     "puppeteer": "^5.5.0"
-  },
-  "devDependencies": {}
+  }
 }
