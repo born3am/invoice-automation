@@ -12,7 +12,9 @@
 - Clone the repository
 - $ npm install (to install dependencies)
 - To make the email sending works you should create a .env file in the root directory and include your email credentials:
+
 EMAIL=your@email.com
+
 PASSWORD=your-password
 
 #### Usage
