@@ -14,8 +14,11 @@
 - To make the email sending works you should create a .env file in the root directory and include your gmail email credentials:
 
 EMAIL=your@email.com
+
 PASSWORD=your-password
+
 (you need to enable less security level to work with gmail: https://hotter.io/docs/email-accounts/secure-app-gmail/)
+
 
 #### Usage
 
