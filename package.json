@@ -15,11 +15,18 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "dotenv": "^16.0.0",
-    "express": "^4.17.3",
     "handlebars": "^4.7.6",
-    "mongodb": "^4.4.1",
-    "mongoose": "^6.2.4",
     "nodemailer": "^6.7.2",
-    "puppeteer": "^5.5.0"
-  }
+    "puppeteer": "^5.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/born3am/invoice-automation.git"
+  },
+  "bugs": {
+    "url": "https://github.com/born3am/invoice-automation/issues"
+  },
+  "homepage": "https://github.com/born3am/invoice-automation#readme"
 }
