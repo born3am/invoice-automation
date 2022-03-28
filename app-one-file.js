@@ -111,7 +111,7 @@ function daemonPdfEmail() {
                 The amount to be paid until <strong> ${data.invoiceDueDate} </strong> is <strong> ${data.invoiceAmount} </strong>. <br><br><br>
                 Thank you for business with us!  <br><br>
                 Best regards, <br>
-                Your PaketConcierge Team <br><br>
+                Your PaketCouncierge Team <br><br>
                 
                 <img style="width:150px;" src="cid:logo"/>                
                 `,
