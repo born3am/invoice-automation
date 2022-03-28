@@ -58,16 +58,20 @@ function sendEmail(data) {
         if (error) {
             console.log(error);
         } else {
+            console.log('========================================================================');
             console.log(
                 `Email sent "now" to ` + chalk.white.bold(data.clientName) + ` at ` + chalk.white.bold(data.clientEmail) + ' - 🆗'
 
                 // `Email sent to ${data.clientName} at ${data.clientEmail} with info: ${info.response}`
             );
+            //DB update
             data.invoiceSent = true;
             fs.writeFileSync("./db/invoicesDB.json", JSON.stringify(invoicesDB));
 
-            data.invoicePdf = true;
-            fs.writeFileSync("./db/invoicesDB.json", JSON.stringify(invoicesDB));
+            console.log(
+                chalk.white.bold(data.invoiceNumber) + " - " + chalk.white.bold(data.clientName) + ` "EMAIL STATUS" was updated in our database! ` + ' - 🆗'
+            );
+
         }
     });
 }

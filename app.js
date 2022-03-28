@@ -35,12 +35,11 @@ function daemonPdfEmail() {
 
       // Invoke the function and handle DB update
       generatePdf(data);
-
-
+      sendEmail(data);
     });
 
 
-  }, 3000);
+  }, 5000);
 }
 
 // Invoke the main app function

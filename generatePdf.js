@@ -28,7 +28,7 @@ async function getTemplateHtml() {
 }
 
 
-//Generate PDF handlebars & puppeteer
+//generate PDF handlebars & puppeteer
 function generatePdf(data) {
     getTemplateHtml().then(async (res) => {
         // Entire html code stored in "res" object
@@ -47,19 +47,18 @@ function generatePdf(data) {
             path: `./invoices/invoice-${data.invoiceNumber}-${data.clientName}.pdf`,
             format: "A4",
         });
-
-        await browser.close()
-
-            .then(() => {
-                `PDF Invoice ` + chalk.white.bold(data.invoiceNumber) + ` generated now to ` + chalk.white.bold(data.clientName) + ' - 🆗'
-            })
-            .then(() => {
-                // Update DB with invoice pdf path
-                data.invoicePdf = true;
-                fs.writeFileSync("./db/invoicesDB.json", JSON.stringify(invoicesDB));
-            })
+        await browser.close();
+        console.log('========================================================================');
+        console.log(
+            `PDF Invoice ` + chalk.white.bold(data.invoiceNumber) + ` generated now to ` + chalk.white.bold(data.clientName) + ' - 🆗'
+        );
+        //DB update
+        data.invoicePdf = true;
+        fs.writeFileSync("./db/invoicesDB.json", JSON.stringify(invoicesDB));
+        console.log(
+            chalk.white.bold(data.invoiceNumber) + " - " + chalk.white.bold(data.clientName) + ` "PDF STATUS" was updated in our database! ` + ' - 🆗'
+        );
     });
-
 }
 
 
