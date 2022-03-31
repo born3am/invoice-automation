@@ -9,7 +9,7 @@
         "clientStreet": "DHL Street",
         "clientCity": "DHL City",
         "clientEmail": "psmaranhao@gmail.com",
-        "invoicePdf": false,
+        "invoicePdf": true,
         "invoiceSent": false
     },
     {
@@ -22,8 +22,8 @@
         "clientStreet": "FedEx Street",
         "clientCity": "FedEx City",
         "clientEmail": "psmaranhao@gmail.com",
-        "invoicePdf": false,
-        "invoiceSent": false
+        "invoicePdf": true,
+        "invoiceSent": true
     },
     {
         "invoiceNumber": "INV-0003",
