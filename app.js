@@ -59,18 +59,23 @@ function daemonPdfEmail() {
           // Handlebar: html is customized with data from database
           const html = template(data);
 
+            // Ensure the invoices directory exists
+          const invoicesDir = path.join(__dirname, 'invoices');
+          if (!fs.existsSync(invoicesDir)) {
+            fs.mkdirSync(invoicesDir);
+          }
+
           // Puppeteer: html is rendered to pdf and saved locally
           const browser = await puppeteer.launch();
           const page = await browser.newPage();
           await page.setContent(html);
+          const pdfPath = path.join(invoicesDir, `invoice-${data.invoiceNumber}-${data.clientName}.pdf`);
           await page.pdf({
-            path: `./invoices/invoice-${data.invoiceNumber}-${data.clientName}.pdf`,
+            path: pdfPath,
             format: "A4",
           });
           await browser.close();
-          console.log(
-            `PDF Invoice ` + chalk.white.bold(data.invoiceNumber) + ` generated now to ` + chalk.white.bold(data.clientName) + ' - 🆗'
-          );
+          console.log(`PDF Invoice ` + chalk.white.bold(data.invoiceNumber) + ` saved at ${pdfPath}`);
         });
       }
 
