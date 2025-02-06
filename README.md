@@ -11,13 +11,15 @@
 
 - Clone the repository
 - $ npm install (to install dependencies)
-- To make the email sending works you should create a .env file in the root directory and include your gmail email credentials:
+- To make the email sending works you should create a .env file in the root directory and include your Google App Password.
+
+Google App Password / Nodemailer: We utilize Nodemailer for sending emails through GMail, using [App Passwords](https://support.google.com/accounts/answer/185833?hl=en). If you need to renew or generate a new App Password, please follow this [link](https://security.google.com/settings/security/apppasswords).
+
+(you need to enable less security level to work with gmail: https://hotter.io/docs/email-accounts/secure-app-gmail/)
 
 EMAIL=your@email.com
 
 PASSWORD=your-password
-
-(you need to enable less security level to work with gmail: https://hotter.io/docs/email-accounts/secure-app-gmail/)
 
 
 #### Usage
