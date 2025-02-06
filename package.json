@@ -20,6 +20,6 @@
     "mongodb": "^4.17.2",
     "mongoose": "^6.13.6",
     "nodemailer": "^6.9.9",
-    "puppeteer": "^5.5.0"
+    "puppeteer": "^24.2.0"
   }
 }
