@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "test": "jest"
+    "test": "no test specified"
   },
   "keywords": [
     "pdf",
@@ -22,8 +22,5 @@
     "mongoose": "^6.2.4",
     "nodemailer": "^6.7.2",
     "puppeteer": "^24.2.0"
-  },
-  "devDependencies": {
-    "jest": "^29.0.0"
   }
 }
