@@ -19,7 +19,7 @@
     "express": "^4.21.1",
     "handlebars": "^4.7.6",
     "mongodb": "^6.13.0",
-    "mongoose": "^8.10.0",
+    "mongoose": "^9.2.3",
     "nodemailer": "^6.7.2",
     "puppeteer": "^24.2.0"
   }
